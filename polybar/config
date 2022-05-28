@@ -34,7 +34,7 @@ height = 27
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 6.0
-fixed-center = false
+fixed-center = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -62,9 +62,7 @@ tray-position = left
 tray-padding = 2
 ;tray-background = #0063ff
 
-;wm-restack = generic
-;wm-restack = bspwm
-;wm-restack = i3
+wm-restack = i3
 
 ;override-redirect = true
 
@@ -121,7 +119,7 @@ enable-ipc = true
 [module/xwindow]
 type = internal/xwindow
 label = %title%
-label-maxlen = 100
+label-maxlen = 150
 
 [module/xkeyboard]
 type = internal/xkeyboard
