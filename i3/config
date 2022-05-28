@@ -335,7 +335,7 @@ bindsym $mod+Ctrl+l exec i3lock # for lockscreen
 #    }
 #
 
-exec --no-startup-id nitrogen --set-auto /home/bixos/.config/.screenlayout/bf6afc85eef5967bb564e844e6b85ac7.jpg --head=0 && nitrogen --set-auto /home/bixos/.config/.screenlayout/bf6afc85eef5967bb564e844e6b85ac7.jpg --head=1
+exec --no-startup-id nitrogen --set-auto $XDG_CONFIG_HOME/.screenlayout/bg.jpg --head=0 && nitrogen --set-auto $XDG_CONFIG_HOME/.screenlayout/bg.jpg --head=1
 
 # bar {
 #        mode hide
