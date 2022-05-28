@@ -55,7 +55,7 @@ font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 
-modules-right = filesystem memory cpu eth wlan temperature battery powermenu
+modules-right = filesystem memory cpu eth wlan networkspeedup networkspeeddown temperature battery powermenu
 modules-center = xwindow
 
 tray-position = left
@@ -106,14 +106,9 @@ font-2 = siji:pixelsize=10;1
 modules-left = i3
 modules-right = backlight-acpi pulseaudio xkeyboard date
 
-;wm-restack = generic
-;wm-restack = bspwm
 wm-restack = i3
 
 ;override-redirect = true
-
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
@@ -125,7 +120,8 @@ enable-ipc = true
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:100:...%
+label = %title%
+label-maxlen = 100
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -267,8 +263,8 @@ ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
-;interface = enxd0c0bf4d7eea TODO find UP interface via `ip -br a s`
 interface = wlo1
+;interface = enxd0c0bf4d7eea TODO find UP interface via `ip -br a s`
 interval = 3.0
 
 format-connected-underline = #55aa55
@@ -281,6 +277,32 @@ format-disconnected =
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
+
+[module/networkspeedup]
+;https://github.com/jaagr/polybar/wiki/Module:-network
+type=internal/network
+interface = wlo1
+;interface = wlp3s0 TODO
+label-connected = "%upspeed:7%"
+format-connected = <label-connected>
+format-connected-prefix = "U"
+format-connected-prefix-foreground = #3EC13F
+format-connected-foreground = ${colors.foreground}
+format-connected-background = ${colors.background}
+format-underline = # 62FF00
+
+[module/networkspeeddown]
+;https://github.com/jaagr/polybar/wiki/Module:-network
+type=internal/network
+interface = wlo1
+;interface = wlp3s0 TODO
+label-connected = "%downspeed:7%"
+format-connected = <label-connected>
+format-connected-prefix = "D"
+format-connected-prefix-foreground = #FE522C
+format-connected-foreground = ${colors.foreground}
+format-connected-background = ${colors.background}
+format-underline = # 62FF00
 
 [module/date]
 type = internal/date
