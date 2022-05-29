@@ -1,7 +1,20 @@
 #!/bin/sh
 
 fullPath="${HOME}/.config/scripts/storage/polybarShowHide.txt"
+
+if ! [ -f $fullPath ]
+then
+    touch $fullPath
+    echo 0 > $fullPath
+fi
+
 oldValue=$( cat ${fullPath} )
+
+if [ -z $oldValue ]
+then
+    echo 0 > $file
+    oldValue=0
+fi
 
 if [ $(( ${oldValue} % 2 )) = 0 ]
 then
