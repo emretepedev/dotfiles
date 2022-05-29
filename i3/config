@@ -79,13 +79,13 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
 # ScreenLayout for Xrandr
-exec --no-startup-id ~/.config/.screenlayout/hdmiOnly.sh
+exec --no-startup-id $HOME/.config/.screenlayout/hdmiOnly.sh
 
 # Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Polybar autohide
-exec --no-startup-id /home/$USER/.config/polybar/polybar_autohide/polybar-autohide
+exec --no-startup-id $HOME/.config/polybar/polybar_autohide/polybar-autohide
 
 # Polybar Manual Show/Hide
 bindsym $mod+grave exec --no-startup-id $HOME/.config/scripts/polybarShowHide.sh
@@ -235,9 +235,9 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # Screenshots
-bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date)"
-bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date)"
-bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/$(date)"
+bindsym Print exec --no-startup-id maim "$HOME/Pictures/$(date)"
+bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "$HOME/Pictures/$(date)"
+bindsym Shift+Print exec --no-startup-id maim --select "$HOME/Pictures/$(date)"
 
 ## Clipboard Screenshots
 bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
@@ -316,8 +316,7 @@ bindsym $mod+Ctrl+l exec i3lock # for lockscreen
 #    font pango: Source Sans Pro 12
 #    mode hide
 #    modifier $mod
-#    i3bar_command i3bar
-#    position top
+#    i3bar_command i3bar position top
 #    tray_padding 5px
 #    tray_output primary
 #    status_command i3status
@@ -335,7 +334,8 @@ bindsym $mod+Ctrl+l exec i3lock # for lockscreen
 #    }
 #
 
-exec --no-startup-id nitrogen --set-auto $XDG_CONFIG_HOME/.screenlayout/bg.jpg --head=0 && nitrogen --set-auto $XDG_CONFIG_HOME/.screenlayout/bg.jpg --head=1
+# Set Background
+exec --no-startup-id feh --bg-scale $HOME/.config/.screenlayout/bg.jpg
 
 # bar {
 #        mode hide
