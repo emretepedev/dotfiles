@@ -1,1 +1,4 @@
-packages.zsh.zwc
+*.zwc
+.zcompdump*
+
+

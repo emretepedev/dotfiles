@@ -38,6 +38,7 @@ alias vim="nvim"
 
 # Lazygit
 alias lg="lazygit"
+alias ld="lazydocker"
 
 # Python
 alias python="python3"
