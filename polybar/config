@@ -261,8 +261,8 @@ ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
-interface = wlo1
 ;interface = enxd0c0bf4d7eea TODO find UP interface via `ip -br a s`
+interface = wlo1
 interval = 3.0
 
 format-connected-underline = #55aa55
@@ -279,8 +279,8 @@ format-disconnected =
 [module/networkspeedup]
 ;https://github.com/jaagr/polybar/wiki/Module:-network
 type=internal/network
-interface = wlo1
 ;interface = wlp3s0 TODO
+interface = wlo1
 label-connected = "%upspeed:7%"
 format-connected = <label-connected>
 format-connected-prefix = "U"
@@ -292,8 +292,8 @@ format-underline = # 62FF00
 [module/networkspeeddown]
 ;https://github.com/jaagr/polybar/wiki/Module:-network
 type=internal/network
-interface = wlo1
 ;interface = wlp3s0 TODO
+interface = wlo1
 label-connected = "%downspeed:7%"
 format-connected = <label-connected>
 format-connected-prefix = "D"
@@ -349,8 +349,8 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/battery]
 type = internal/battery
-battery = BAT0
 ;battery = BAT1 TODO
+battery = BAT0
 adapter = ACAD
 full-at = 98
 
