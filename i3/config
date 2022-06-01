@@ -47,21 +47,31 @@ set $ws8  "8:8"
 set $ws9  "9:9"
 set $ws10 "10:Media"
 
-# assign programs to their workspaces
-assign [class="Google-chrome" instance="google-chrome"] $ws1
-assign [class="Alacritty" instance="Alacritty"] $ws2
-assign [class="TablePlus" instance="TablePlus"] $ws3
-assign [class="Insomnia" instance="insomnia"] $ws3
-assign [class="com.wisecoders.dbs.DbSchemaApp" instance="com.wisecoders.dbs.DbSchemaApp"] $ws3
+# assign programs to their workspaces - use `xprop` to find class and instance
+assign [class="Brave-browser" instance="brave-browser"] $ws1
+assign [class="Code" instance="code"] $ws2
+assign [class="Alacritty" instance="Alacritty"] $ws3
+# assign [class="TablePlus" instance="TablePlus"] $ws3
+# assign [class="Insomnia" instance="insomnia"] $ws3
+# assign [class="com.wisecoders.dbs.DbSchemaApp" instance="com.wisecoders.dbs.DbSchemaApp"] $ws3
+assign [class="TelegramDesktop" instance="Telegram"] $ws4
+assign [class="Brave-browser" instance="crx_hnpfjngllnobngcgfapefoaidbinmjnm"] $ws4
 assign [class="discord" instance="discord"] $ws4
-assign [class="All-in-One Messenger" instance="all-in-one messenger"] $ws4
-assign [class="code" instance="code"] $ws5
-assign [class="zoom" instance="zoom"] $ws9
+# assign [class="All-in-One Messenger" instance="all-in-one messenger"] $ws4
+# assign [class="zoom" instance="zoom"] $ws9
+assign [class="Authy Desktop" instance="authy desktop"] $ws9
+assign [class="Bitwarden" instance="bitwarden"] $ws9
 
 # exec programs
-exec google-chrome
+# exec google-chrome
+exec brave-browser
 exec alacritty
-exec /opt/All_In_One_Messenger/all-in-one-messenger-2.1.0-beta.AppImage
+exec code
+exec discord
+exec /opt/brave.com/brave/brave-browser --profile-directory=Default --app-id=hnpfjngllnobngcgfapefoaidbinmjnm
+exec /opt/Telegram/Telegram -workdir /home/emretepedev/.local/share/TelegramDesktop/ -- %u
+
+# exec /opt/All_In_One_Messenger/all-in-one-messenger-2.1.0-beta.AppImage
 
 # for_window [class="Google-chrome"] fullscreen enable
 # for_window [class="TelegramDesktop"] fullscreen enable
