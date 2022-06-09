@@ -6,8 +6,11 @@ mcd () {
 alias alert="dbus-launch notify-send"
 
 # Update & Upgrade alias
-alias upd="sudo apt update && sudo apt list --upgradable"
+alias upd="sudo apt update && apt list --upgradable"
 alias upg="sudo apt upgrade -y"
+alias upgdb="apt list --upgradable"
+alias secupd="sudo apt update && apt list --upgradable | grep security | cut -d "/" -f 1"
+alias secupg="sudo apt list --upgradable | grep security | cut -d "/" -f 1 | xargs sudo apt install -y"
 
 # Colorfull LS
 alias hal="colorls -lA --sd"
