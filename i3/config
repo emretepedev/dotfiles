@@ -359,3 +359,6 @@ new_window none
 
 bindsym $alt+Tab workspace next_on_output
 bindsym $alt+Shift+Tab workspace prev_on_output
+
+#Start the battery notification script
+exec --no-startup-id i3-battery-notification
