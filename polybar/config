@@ -80,7 +80,7 @@ height = 27
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 6.0
-fixed-center = false
+fixed-center = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -103,6 +103,7 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = i3
 modules-right = backlight-acpi pulseaudio xkeyboard date
+modules-center = whoami
 
 wm-restack = i3
 
@@ -399,6 +400,11 @@ ramp-0 = 
 ramp-1 = 
 ramp-2 = 
 ramp-foreground = ${colors.foreground-alt}
+
+[module/whoami]
+type = custom/script
+exec = whoami
+label = %output%
 
 [module/powermenu]
 type = custom/menu
