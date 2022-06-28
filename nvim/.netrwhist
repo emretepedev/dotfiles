@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/home/emretepedev/.config/nvim'
+let g:netrw_dirhist_0='/home/emretepedev/.config/lazygit'
+let g:netrw_dirhist_9='/home/emretepedev/.fonts'
+let g:netrw_dirhist_8='/home/emretepedev/.config/polybar'
+let g:netrw_dirhist_7='/home/emretepedev/.config/tmux'
+let g:netrw_dirhist_6='/home/emretepedev/.config/thefuck'
+let g:netrw_dirhist_5='/home/emretepedev/.config/zsh'
+let g:netrw_dirhist_4='/home/emretepedev/.local/share/zsh/custom/themes/powerlevel10k'
+let g:netrw_dirhist_3='/home/emretepedev/.config/zsh'
+let g:netrw_dirhist_2='/home/emretepedev/.oh-my-zsh'
